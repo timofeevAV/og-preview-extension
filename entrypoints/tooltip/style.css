@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+
+/* Map shadcn semantic colors as Tailwind utilities for the shadow DOM.
+   Without this @theme inline, classes like bg-card / text-card-foreground /
+   text-muted-foreground are not generated in the content-script CSS bundle at all. */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-border: var(--border);
+  --radius-lg: var(--radius);
+}
+
+/* Light mode tokens on :host (equivalent to :root in the popup).
+   Custom properties are NOT reset by `all: initial`, so they survive WXT's reset. */
+:host {
+  /* WXT prepends `:host { all: initial !important }` — we need !important to win here. */
+  pointer-events: none !important;
+  z-index: 2147483647 !important;
+  position: relative !important;
+
+  box-sizing: border-box;
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --primary: oklch(0.205 0 0);
+  --border: oklch(0.922 0 0);
+  --radius: 0.625rem;
+}
+
+/* Dark mode — must use media query, not .dark class, since shadow DOM cannot
+   inspect the host page's class attribute. */
+@media (prefers-color-scheme: dark) {
+  :host {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --primary: oklch(0.87 0 0);
+    --border: oklch(1 0 0 / 10%);
+  }
+}
+
+/* Forced light theme — overrides system dark preference */
+:host([data-theme='light']) {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --primary: oklch(0.205 0 0);
+  --border: oklch(0.922 0 0);
+}
+
+/* Forced dark theme — overrides system light preference */
+:host([data-theme='dark']) {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --primary: oklch(0.87 0 0);
+  --border: oklch(1 0 0 / 10%);
+}
+
+/* The fixed full-viewport <html> element inside the shadow DOM must also pass
+   events through so the underlying page remains interactive. */
+html {
+  pointer-events: none;
+}
+
+/* Only the visible tooltip card re-enables pointer events. */
+.og-tooltip-card {
+  pointer-events: auto;
+}

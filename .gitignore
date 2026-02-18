@@ -1,0 +1,13 @@
+# WXT generated files
+.wxt/
+.output/
+
+# Dependencies
+node_modules/
+
+# Machine-specific WXT browser config
+web-ext.config.ts
+
+# OS
+.DS_Store
+Thumbs.db

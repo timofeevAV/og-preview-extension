@@ -1,0 +1,6 @@
+.wxt/
+.output/
+node_modules/
+.planning/
+pnpm-lock.yaml
+CLAUDE.md

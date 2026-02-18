@@ -1,0 +1,7 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "singleAttributePerLine": true,
+  "tailwindStylesheet": "./entrypoints/popup/style.css"
+}
