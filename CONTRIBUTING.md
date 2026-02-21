@@ -10,7 +10,7 @@ Thanks for your interest in contributing to OG Preview Extension!
 ## Getting Started
 
 ```bash
-git clone https://github.com/<owner>/og-preview-extension.git
+git clone https://github.com/timofeevAV/og-preview-extension.git
 cd og-preview-extension
 pnpm install
 pnpm dev          # Start Chrome dev server with HMR
@@ -67,8 +67,29 @@ This project uses `simple-git-hooks` and `lint-staged` to automatically run ESLi
 
 Both are enforced automatically. No manual configuration needed.
 
+## Commit Convention
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) for automated releases. PR titles must follow this format:
+
+```
+<type>[optional scope]: <description>
+```
+
+| Type       | When to use                          |
+| ---------- | ------------------------------------ |
+| `feat`     | New feature (triggers minor release) |
+| `fix`      | Bug fix (triggers patch release)     |
+| `docs`     | Documentation only                   |
+| `chore`    | Maintenance, dependencies            |
+| `ci`       | CI/CD changes                        |
+| `refactor` | Code change that doesn't fix or add  |
+| `test`     | Adding or fixing tests               |
+| `perf`     | Performance improvement              |
+
+PR titles are validated by CI. Since we use squash merging, your PR title becomes the commit message on `main`.
+
 ## Pull Request Guidelines
 
-- Use a descriptive title
+- Use a descriptive title following the commit convention above
 - Reference related issues (e.g., "Closes #42")
 - Ensure CI passes before requesting review
