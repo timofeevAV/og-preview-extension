@@ -37,3 +37,14 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 7. Hover Tooltip | v1.0 | 3/3 | Complete | 2026-02-19 |
 | 8. Swiss Design + Settings | v1.0 | 4/4 | Complete | 2026-02-19 |
 | 9. Fix Storage Quota Error | v1.0 | 1/1 | Complete | 2026-02-19 |
+
+### Phase 1: Prepare open-source GitHub release with CI/CD, linting, contribution guidelines, and best practices
+
+**Goal:** Repository is fully configured for open-source public release with automated CI/CD, community health files, structured issue/PR templates, and proper repository settings
+**Depends on:** v1.0 milestone
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — CI/CD pipeline (GitHub Actions), .node-version, .editorconfig, packageManager, Dependabot
+- [ ] 01-02-PLAN.md — Community health files (LICENSE, CONTRIBUTING, CoC, SECURITY) and GitHub issue/PR templates
+- [ ] 01-03-PLAN.md — Repository configuration (gh CLI: description, topics, labels, branch rename) and final verification
