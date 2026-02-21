@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-19)
 
 **Core value:** See exactly how any page looks when shared on any platform, right now, without posting it.
-**Current focus:** v1.0 milestone COMPLETE — Planning next milestone
+**Current focus:** Prepare open-source GitHub release
 
 ## Current Position
 
-Phase: 9 of 9 (Fix chrome.storage.sync MAX_WRITE_OPERATIONS_PER_MINUTE quota error)
-Plan: 1 of 1 in current phase — 09-01 complete (Debounce hoverDelay slider writes via Radix onValueCommit)
-Status: Phase 9 complete; all 1 plans executed
-Last activity: 2026-02-19 -- 09-01 complete; hoverDelay slider writes reduced from ~40/drag to 1/drag via localHoverDelay state + onValueCommit; human verification confirmed no quota errors
+Phase: 1 (Prepare open-source GitHub release with CI/CD, linting, contribution guidelines, and best practices)
+Plan: 2 of 3 in current phase — 01-01 complete (CI/CD pipeline, .node-version, .editorconfig, packageManager, Dependabot)
+Status: Executing phase 1
+Last activity: 2026-02-21 -- 01-01 complete; GitHub Actions CI workflow, Dependabot config, .node-version, .editorconfig, packageManager field added
 
-Progress: [██████████] 100% (phase 9 complete) / Phase 9: 1/1 plans (COMPLETE)
+Progress: [███░░░░░░░] 33% (plan 1 of 3 complete) / Phase 1: 1/3 plans
 
 ## Performance Metrics
 
@@ -36,6 +36,7 @@ Progress: [██████████] 100% (phase 9 complete) / Phase 9: 1/
 | 07-hover-tooltip | 3/3 | ~6 min | ~2 min |
 | 08-swiss-design-ui-ux | 4/4 | ~8 min | ~2 min |
 | 09-fix-chrome-storage-quota | 1/1 | ~10 min | ~10 min |
+| 01-prepare-oss-release | 1/3 | ~2 min | ~2 min |
 
 **Recent Trend:**
 - Last 5 plans: 06-01 (~2 min), 06-02 (~5 min), 07-01 (~3 min), 07-02 (~3 min)
@@ -120,11 +121,16 @@ Recent decisions affecting current work:
 - [09-01]: onValueCommit (not debounce/useRef timer) chosen — Radix built-in, zero timer complexity, exactly 1 write per gesture
 - [09-01]: localHoverDelay state initialized from DEFAULT_SETTINGS, synced from storage in useEffect — no stale initial display
 - [09-01]: Radix issue #2169 (keyboard arrow fires onValueCommit before onValueChange, stored value lags one step) accepted as minor tradeoff for a delay preference setting
+- [01-01]: Single CI workflow with all checks — appropriate for project size; no matrix builds
+- [01-01]: Node 22 LTS in .node-version for CI stability; local dev runs Node 25
+- [01-01]: pnpm@10.26.1 pinned via packageManager field — enables corepack and pnpm/action-setup auto-detection
+- [01-01]: 30-day artifact retention for main branch builds; concurrency groups cancel stale PR runs
 
 ### Roadmap Evolution
 
 - Phase 8 added: Swiss Design UI/UX overhaul, shadcn components, settings page with hoverPreview, defaultTab, hoverDelay, theme
 - Phase 9 added: Fix chrome.storage.sync MAX_WRITE_OPERATIONS_PER_MINUTE quota error — debounce hoverDelay slider writes
+- Phase 1 added: Prepare open-source GitHub release with CI/CD, linting, contribution guidelines, and best practices
 
 ### Pending Todos
 
@@ -137,6 +143,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-19
-Stopped at: v1.0 milestone complete — 9 phases, 22 plans, all requirements implemented. Archived to .planning/milestones/. Git tagged v1.0.
+Last session: 2026-02-21
+Stopped at: Completed 01-01-PLAN.md (CI/CD pipeline, project config, Dependabot)
 Resume file: None

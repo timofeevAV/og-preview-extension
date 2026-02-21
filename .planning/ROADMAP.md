@@ -45,6 +45,6 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 **Plans:** 3 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — CI/CD pipeline (GitHub Actions), .node-version, .editorconfig, packageManager, Dependabot
+- [x] 01-01-PLAN.md — CI/CD pipeline (GitHub Actions), .node-version, .editorconfig, packageManager, Dependabot
 - [ ] 01-02-PLAN.md — Community health files (LICENSE, CONTRIBUTING, CoC, SECURITY) and GitHub issue/PR templates
 - [ ] 01-03-PLAN.md — Repository configuration (gh CLI: description, topics, labels, branch rename) and final verification
