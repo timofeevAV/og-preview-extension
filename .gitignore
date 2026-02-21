@@ -11,3 +11,6 @@ web-ext.config.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# Internal planning (GSD workflow)
+.planning/
