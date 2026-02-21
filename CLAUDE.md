@@ -12,6 +12,7 @@ pnpm build:edge   # Production build for Edge
 pnpm zip          # Build + package for Chrome Web Store submission
 pnpm typecheck    # TypeScript type check (tsc --noEmit)
 pnpm test         # Run Vitest unit tests
+pnpm check        # Run all checks (lint + format:check + typecheck + test)
 ```
 
 Build output: `.output/chrome-mv3/`

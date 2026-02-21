@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-19)
 ## Current Position
 
 Phase: 1 (Prepare open-source GitHub release with CI/CD, linting, contribution guidelines, and best practices)
-Plan: 3 of 3 in current phase — 01-02 complete (community health files, GitHub templates)
-Status: Executing phase 1
-Last activity: 2026-02-21 -- 01-02 complete; LICENSE, CONTRIBUTING.md, CODE_OF_CONDUCT.md, SECURITY.md, YAML issue forms, PR template
+Plan: 3 of 3 in current phase — 01-03 complete (repo config, semantic-release, branch ruleset, security)
+Status: Phase 1 complete
+Last activity: 2026-02-21 -- 01-03 complete; semantic-release v1.0.0 published, branch ruleset active, squash-only merge, PR title linting, secret scanning
 
-Progress: [██████░░░░] 67% (plan 2 of 3 complete) / Phase 1: 2/3 plans
+Progress: [██████████] 100% (phase 1 complete) / Phase 1: 3/3 plans
 
 ## Performance Metrics
 
@@ -36,7 +36,7 @@ Progress: [██████░░░░] 67% (plan 2 of 3 complete) / Phase 1:
 | 07-hover-tooltip | 3/3 | ~6 min | ~2 min |
 | 08-swiss-design-ui-ux | 4/4 | ~8 min | ~2 min |
 | 09-fix-chrome-storage-quota | 1/1 | ~10 min | ~10 min |
-| 01-prepare-oss-release | 2/3 | ~5 min | ~2.5 min |
+| 01-prepare-oss-release | 3/3 | ~12 min | ~4 min |
 
 **Recent Trend:**
 - Last 5 plans: 06-01 (~2 min), 06-02 (~5 min), 07-01 (~3 min), 07-02 (~3 min)
@@ -128,6 +128,14 @@ Recent decisions affecting current work:
 - [01-02]: Contributor Covenant v2.1 chosen as industry-standard CoC
 - [01-02]: YAML issue forms (.yml) used over markdown templates (.md) for structured validation
 - [01-02]: Generic copyright holder "OG Preview Extension contributors" to avoid personal name
+- [Phase 01-03]: Default branch renamed master->main; CLAUDE.md kept public; 8 topics for discoverability
+- [01-03]: Squash-only merge with PR title as commit message — clean conventional commits on main
+- [01-03]: Branch ruleset on main: require PR + CI status check, block force push/delete, admin bypass
+- [01-03]: semantic-release without @semantic-release/git — can't push to protected main; tags + GitHub Releases sufficient
+- [01-03]: Actions default token restricted to read-only; each workflow declares its own permissions
+- [01-03]: Secret scanning + push protection enabled; Dependabot alerts + vulnerability alerts enabled
+- [01-03]: PR title linting via amannn/action-semantic-pull-request enforces conventional commits
+- [01-03]: Dependabot grouped updates with conventional commit prefixes (chore/ci)
 
 ### Roadmap Evolution
 
@@ -147,5 +155,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: Completed 01-01-PLAN.md (CI/CD pipeline, project config, Dependabot)
+Stopped at: 01-03-PLAN.md Task 2 checkpoint:human-verify (verify CI, community profile, labels, gitignore)
 Resume file: None

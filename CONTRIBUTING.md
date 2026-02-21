@@ -52,7 +52,7 @@ components/            # Shared UI components (shadcn)
 2. Make your changes
 3. Run all checks:
    ```bash
-   pnpm lint && pnpm format:check && pnpm typecheck && pnpm test
+   pnpm check
    ```
 4. Submit a pull request
 
